@@ -1,4 +1,4 @@
-import SearchResultSingle from '../../Components/SearchResultSingle';
+import SearchResultSingle from '../SearchResultSingle';
 
 const SearchResultsList = () => {
 
