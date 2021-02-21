@@ -234,6 +234,17 @@ function MyComponent(props) {
                     onCloseClick={() => setSelected(null)}
                 >
                     <p>{selected.ntaname}</p>
+                    {/* {
+                        selected.website ? 
+                        (
+                            <p>{selected.website}</p>
+                        ) : <p>No Website Available</p>
+                    } */}
+                            {/* selected.website.map((link, index) = {
+                                return (
+                                    <p>{link}</p>
+                                )
+                            }) */}
                 </InfoWindow>
                 )) : <></>
             }
