@@ -7,88 +7,52 @@ import './about.css';
 const AboutPage = () => {
     return (
         <div className="AboutPage">
-                {/* <Card className="desc" style={{width: '1080px', height: '300'}}> */}
-                    <Card.Text className="desc" style={{width: '1080px', height: '300'}}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Temporibus enim cumque nisi veniam aperiam quod, doloremque fugit, 
-                        explicabo deserunt, voluptate facere rerum quos quibusdam quisquam rem 
-                        qui est obcaecati doloribus? Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Temporibus enim cumque nisi veniam aperiam quod, doloremque fugit, 
-                        explicabo deserunt, voluptate facere rerum quos quibusdam
-                    </Card.Text>
-                {/* </Card> */}
+            <Card.Text className="desc" style={{vw: "60%"}}>
+            Our intent with the creation of Waste Not, Want Not, is to better the dialogue and contributions 
+            of sustainability within a large metropolitan city. This website access public open-source data and 
+            intends to connect users with locations of available places to compost their food and locate farmer's 
+            markets and community gardens within their neighborhoods.
+            </Card.Text>
 
-                {/* <Card className="cardtitle1" style={{ width: '540px' }}> */}
-                    <Card.Title className="title1" style={{ width: '540px' }} >
-                        Drop Off Compost
-                    </Card.Title>
-                {/* </Card> */}
-                <CardColumns className='col1'>
-                {/* <Card> */}
-                    <Card.Img variant="top" style={{ width: '540px', height: '504' }} src="https://news.wttw.com/sites/default/files/styles/full/public/article/image-non-gallery/CompostProposal_FULL.jpg?itok=QrQHCWZf" />
-                {/* </Card> */}
-                {/* <Card className="tcard1" style={{ width: '540px', height: '504' }}> */}
+            <Card.Title className="title1" style={{ width: '540px' }} >
+                Drop Off Compost
+            </Card.Title>
+            <CardColumns className='col1'>
+                <Card.Img variant="top" style={{ vw: "60%"}} src="https://news.wttw.com/sites/default/files/styles/full/public/article/image-non-gallery/CompostProposal_FULL.jpg?itok=QrQHCWZf" />
                     <Card.Text className="text1" style={{ width: '540px', height: '504' }}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Temporibus enim cumque nisi veniam aperiam quod, doloremque fugit, 
-                        explicabo deserunt, voluptate facere rerum quos quibusdam quisquam rem 
-                        qui est obcaecati doloribus? Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Temporibus enim cumque nisi veniam aperiam quod, doloremque fugit, 
-                        explicabo deserunt, voluptate facere rerum quos quibusdam quisquam rem 
-                        qui est obcaecati
+                    With a growing number of people using compostable products and foods, the need 
+                    to locate accessible locations to compost is clear. 
                     </Card.Text>
-                {/* </Card> */}
-                </CardColumns>
+            </CardColumns>
 
-                {/* <Card className="cardtitle2" style={{ width: '540px' }}> */}
-                    <Card.Title className="title2" style={{ width: '540px' }}>
-                        Community Garden
-                    </Card.Title>
-                {/* </Card> */}
+            <Card.Title className="title2" style={{ width: '540px' }}>
+                Community Garden
+            </Card.Title>
                 <CardColumns className='col2'>
-                {/* <Card> */}
                     <Card.Img variant="top" style={{ width: '540px', height: '504' }} src="https://news.wttw.com/sites/default/files/styles/full/public/article/image-non-gallery/CompostProposal_FULL.jpg?itok=QrQHCWZf" />
-                {/* </Card> */}
-                {/* <Card style={{ width: '540px', height: '504' }}> */}
-                    <Card.Text className="text1" style={{ width: '540px', height: '504' }}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Temporibus enim cumque nisi veniam aperiam quod, doloremque fugit, 
-                        explicabo deserunt, voluptate facere rerum quos quibusdam quisquam rem 
-                        qui est obcaecati doloribus? Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Temporibus enim cumque nisi veniam aperiam quod, doloremque fugit, 
-                        explicabo deserunt, voluptate facere rerum quos quibusdam quisquam rem 
-                        qui est obcaecati
-                    </Card.Text>
-                {/* </Card> */}
+                        <Card.Text className="text1" style={{ width: '540px', height: '504' }}>
+                        With over 600 community gardens and other publicly accessible gardens, across the 
+                        five boroughs of New Yorkers are no strangers to growing their food. 
+                        </Card.Text>
                 </CardColumns>
 
-                {/* <Card className="cardtitle3" style={{ width: '540px' }}> */}
-                    <Card.Title className="title3" style={{ width: '540px' }}>
-                        Farmers Market
-                    </Card.Title>
-                {/* </Card> */}
-                <CardColumns className='col3'>
-                {/* <Card> */}
-                    <Card.Img variant="top" style={{ width: '540px', height: '504' }} src="https://news.wttw.com/sites/default/files/styles/full/public/article/image-non-gallery/CompostProposal_FULL.jpg?itok=QrQHCWZf" />
-                {/* </Card> */}
-                {/* <Card style={{ width: '540px', height: '504' }}> */}
+            <Card.Title className="title3" style={{ width: '540px' }}>
+                Farmers Market
+            </Card.Title>
+            <CardColumns className='col3'>
+                <Card.Img variant="top" style={{ width: '540px', height: '504' }} src="https://news.wttw.com/sites/default/files/styles/full/public/article/image-non-gallery/CompostProposal_FULL.jpg?itok=QrQHCWZf" />
                     <Card.Text className="text1" style={{ width: '540px', height: '504' }}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Temporibus enim cumque nisi veniam aperiam quod, doloremque fugit, 
-                        explicabo deserunt, voluptate facere rerum quos quibusdam quisquam rem 
-                        qui est obcaecati doloribus? Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Temporibus enim cumque nisi veniam aperiam quod, doloremque fugit, 
-                        explicabo deserunt, voluptate facere rerum quos quibusdam quisquam rem 
-                        qui est obcaecati
+                    Farmer Markets located throughout NYC are more than just fantastic places to find great produce and local products, 
+                    but they are also important places to learn about the importance of composting. Most farmers tend to do 
+                    their best utilizing compost in their soil mixtures. Locate the nearest Farmers Market near you!
                     </Card.Text>
-                {/* </Card> */}
-                </CardColumns>
+            </CardColumns>
 
-                <CardColumns className="col4">
-                    <Card.Title className="faqtitle" style={{width: '850px', height: '300'}}>
-                        FAQs about Composting & Recycling
-                    </Card.Title>
-                </CardColumns>
+        <CardColumns className="col4">
+            <Card.Title className="faqtitle" style={{width: '850px', height: '300'}}>
+                FAQs about Composting & Recycling
+            </Card.Title>
+        </CardColumns>
         </div>
         
     )

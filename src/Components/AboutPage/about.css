@@ -1,4 +1,6 @@
-
+* {
+    background-color: #D5DDC6
+}
 div.faqtitle.card-title.h5 {
     font-size: 50px;
     margin-top: 50px;
@@ -6,43 +8,47 @@ div.faqtitle.card-title.h5 {
 
 
 div.title1.card-title.h5  {
-    font-size: 50px;
+    font-size: 48px;
     margin-left: -3px;
     margin-top: 70px;
+    color: #29401D;
 }
 
 div.title2.card-title.h5 {
-    font-size: 50px;
+    font-size: 48px;
     margin-left: 13px;
     margin-top: 70px;
+    color: #29401D;
     
 }
 
 div.title3.card-title.h5 {
-    font-size: 50px;
+    font-size: 48px;
     margin-left: -30px;
     margin-top: 70px;
+    color: #29401D
 }
 
 div.faqtitle.card-title.h5 {
     margin-left: -3px;
+    color: #29401D;
 }
 
 div.col1.card-columns {
     display: inline-block;
-    font-size: 25px;
+    font-size: 36px;
     margin-left: 70px;
 }
 
 div.col2.card-columns {
     display: inline-block;
-    font-size: 25px;
+    font-size: 36px;
     margin-left: 70px;
 }
 
 div.col3.card-columns {
     display: inline-block;
-    font-size: 25px;
+    font-size: 29px;
     margin-left: 70px;
 }
 
@@ -52,16 +58,23 @@ div.col4.card-columns {
     margin-top: 200px;
 }
 
+h1{
+    font-size: 48px;
+}
+
 img.card-img-top {
-    border-radius: 5%;
+    border-radius: 25px;
 }
 
 p.desc.card-text {
-    font-size: 25px;
+    font-size: 36px;
     margin-left: 70px;
     margin-top: 50px;
+    color: #29401D;
+    
 }
 
 p.faqtext.card-text {
     flex-direction: column;
+
 }
