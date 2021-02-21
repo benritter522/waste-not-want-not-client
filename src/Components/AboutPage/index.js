@@ -9,10 +9,10 @@ const AboutPage = () => {
         <div className="AboutPage">
 
         <CardColumns className='col1'>
-        <Card>
+        <Card className="imgcard1">
             <Card.Img variant="top" style={{ width: '540px', height: '504' }} src="https://news.wttw.com/sites/default/files/styles/full/public/article/image-non-gallery/CompostProposal_FULL.jpg?itok=QrQHCWZf" />
         </Card>
-        <Card style={{ width: '540px', height: '504' }}>
+        <Card className="textcard1" style={{ width: '540px', height: '504' }}>
             <Card.Text className="text1" style={{ width: '540px', height: '504' }}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Temporibus enim cumque nisi veniam aperiam quod, doloremque fugit, 
@@ -26,10 +26,10 @@ const AboutPage = () => {
         </CardColumns>
 
         <CardColumns className='col2'>
-        <Card>
+        <Card className="imgcard2">
             <Card.Img variant="top" style={{ width: '540px', height: '504' }} src="https://news.wttw.com/sites/default/files/styles/full/public/article/image-non-gallery/CompostProposal_FULL.jpg?itok=QrQHCWZf" />
         </Card>
-        <Card style={{ width: '540px', height: '504' }}>
+        <Card className="textcard2" style={{ width: '540px', height: '504' }}>
             <Card.Text className="text1" style={{ width: '540px', height: '504' }}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Temporibus enim cumque nisi veniam aperiam quod, doloremque fugit, 
@@ -43,10 +43,10 @@ const AboutPage = () => {
         </CardColumns>
 
         <CardColumns className='col3'>
-        <Card>
+        <Card className="imgcard3">
             <Card.Img variant="top" style={{ width: '540px', height: '504' }} src="https://news.wttw.com/sites/default/files/styles/full/public/article/image-non-gallery/CompostProposal_FULL.jpg?itok=QrQHCWZf" />
         </Card>
-        <Card style={{ width: '540px', height: '504' }}>
+        <Card classname="textcard3" style={{ width: '540px', height: '504' }}>
             <Card.Text className="text1" style={{ width: '540px', height: '504' }}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Temporibus enim cumque nisi veniam aperiam quod, doloremque fugit, 
