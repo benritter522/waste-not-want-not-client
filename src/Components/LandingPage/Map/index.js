@@ -231,7 +231,7 @@ function MyComponent(props) {
                 <InfoWindow
                     position={selected.point.coordinates}
                     clickable={true}
-                    onCloseClick={() => setSelected({})}
+                    onCloseClick={() => setSelected(null)}
                 >
                     <p>{selected.ntaname}</p>
                 </InfoWindow>
