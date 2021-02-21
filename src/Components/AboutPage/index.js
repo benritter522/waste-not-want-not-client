@@ -88,9 +88,6 @@ const AboutPage = () => {
                     <Card.Title className="faqtitle" style={{width: '850px', height: '300'}}>
                         FAQs about Composting & Recycling
                     </Card.Title>
-                    {/* <Card.Text className="faqtext" style={{width: '850px'}}>
-                        What is composting?
-                    </Card.Text> */}
                 </CardColumns>
         </div>
         
