@@ -1,3 +1,9 @@
+Team Captain: Ben Ritter
+SEI: Ben Ritter, CJ Parnell
+UX: Gloria Tsang, Shermeen Rahman, Jessica Smith, Michael Lahargoue
+Data Scientist: Matthew Burrell
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
