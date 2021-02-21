@@ -1,6 +1,7 @@
 import React from 'react';
 import { GoogleMap, useJsApiLoader, Marker, InfoWindow } from '@react-google-maps/api';
-const compost_data = require('../food_scrap_drop_off_locations_in_nyc')
+const compost_data = require('../food_scrap_drop_off_locations_in_nyc');
+const market_data = require('../dohmh_farmers_markets');
 
 const containerStyle = {
     width: '500px',
@@ -27,13 +28,11 @@ function MyComponent() {
     const onSelect = item => {
         setSelected(item);
     }
-
     const onLoad = React.useCallback(function callback(map) {
         const bounds = new window.google.maps.LatLngBounds();
         map.fitBounds(bounds);
         setMap(map)
     }, [])
-
     const onUnmount = React.useCallback(function callback(map) {
         setMap(null)
     }, [])
@@ -42,6 +41,11 @@ function MyComponent() {
         url: 'https://res.cloudinary.com/lahargoue/image/upload/v1613945753/Compost_Icon_pawmpw.png',
         scaledSize: { width: 20, height: 20 }
     }
+    const marketIcon = {
+        url: 'https://res.cloudinary.com/lahargoue/image/upload/v1613945750/Farmers_Market_Icon_lsuvxi.png',
+        scaledSize: { width: 20, height: 20 }
+    }
+
     return isLoaded ? (
         <GoogleMap
             mapContainerStyle={containerStyle}
@@ -64,28 +68,66 @@ function MyComponent() {
                 })
             }
             {
+                market_data.data.map((item) => {
+                    return (
+                        <Marker 
+                            key={item.index} 
+                            position={{lat: item.latitude, lng: item.longitude}}
+                            icon={marketIcon} 
+                            onClick={() => onSelect(item)}
+                        />
+                    )
+                })
+            }
+            {
             selected ? (
                 <InfoWindow
                     position={{lat: selected.latitude, lng: selected.longitude}}
                     clickable={true}
                     onCloseClick={() => setSelected(null)}
                 >
-                    <div>
-                        <p>Compost Drop-Off Location</p>
-                        <p>{selected.ntaname}</p>
-                        <p>Hours: {selected.hours_to} - {selected.hours_from}</p>
-                    </div>
+                <div>
+                    {
+                        selected.food_scrap_drop_off_site ? (
+                            <div>
+                                <p>Compost Drop-Off Site</p>
+                                <p>{selected.food_scrap_drop_off_site}</p>
+                                <p>Seasonal Availability: {selected.open_months}</p>
+                                <p>Open on: {selected.operation_day} | Hours: {selected.hours_to} - {selected.hours_from}</p>
+                                <div>
+                                    {
+                                        selected.website.map((link, index) => {
+                                            return (
+                                                <a href={link}>{link}</a>
+                                            )
+                                        })
+                                    }
+                                </div>
+                            </div>
+                        ) : <></>
+                    }
+                    {
+                        selected.marketname ? (
+                            <div>
+                                <p>Farmer's Market</p>
+                                <p>{selected.marketname}</p>
+                                <p>Address: {selected.streetaddress}</p>
+                                <p>Seasonal Availability: {selected.seasondates}</p>
+                                <p>Open on: {selected.daysoperation} | Hours: {selected.hoursoperations}</p>
+                            </div>
+                        ) : <></>
+                    }
+
+
+
                     {/* {
                         selected.website ? 
                         (
                             <p>{selected.website}</p>
                         ) : <p>No Website Available</p>
                     } */}
-                            {/* selected.website.map((link, index) = {
-                                return (
-                                    <p>{link}</p>
-                                )
-                            }) */}
+                    
+                </div>
                 </InfoWindow>
                 ) : <></>
             }
