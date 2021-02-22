@@ -8,6 +8,9 @@ div.card {
     border: none;
 }
 
+div.card-title {
+    justify-content: center;
+}
 div.card-title.h5 {
     font-size: 48px;
     margin-top: 200px;
@@ -48,6 +51,11 @@ div.title4.card-title.h5 {
     
 }
 
+div.title12.card-title.h5 {
+    margin-left: 640px;
+
+}
+
 div.faqtitle.card-title.h5 {
     margin-left: -3px;
     color: #29401D;
@@ -77,7 +85,13 @@ div.col4.card-columns {
     flex-wrap: wrap;
     margin-left: 70px;
     flex-direction: column;
+    
+}
 
+div.col5.card-columns {
+    margin-top: 50px;
+    margin-bottom: 200px;
+    margin-left: 50px;
 }
 
 div.desccard.card {
@@ -94,6 +108,14 @@ img.card-img-top {
     
 }
 
+.listgroup {
+    margin-left: 10px;
+}
+
+div.card1.card {
+    justify-content: flex-start;
+    margin-left: 90px;
+}
 p.desc.card-text {
     font-size: 36px;
     margin-left: 70px;
@@ -119,4 +141,19 @@ img.card-img.btmimg {
 
 p.card-text {
     flex-direction: column-reverse;
+}
+
+p.text5.card-text {
+    font-size: 25px;
+    color: #29401D;
+    margin-top: 5vh;
+    /* justify-content: flex-start; */
+}
+
+li.list-group-item {
+    margin-left: 100px;
+    font-size: 18px;
+    color: #29401D;
+    background-color: #d5ddc6;
+    border: none;
 }
