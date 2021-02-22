@@ -120,6 +120,7 @@ function MyComponent(props) {
                                 <p style={{fontWeight: '500', fontSize: 16, color: '#323232'}}>{selected.food_scrap_drop_off_site}</p>
                                 <p style={{fontWeight: '400', fontSize: 14}}>Seasonal Availability: {selected.open_months}</p>
                                 <p style={{fontWeight: '400', fontSize: 14}}>Open on: {selected.operation_day} | Hours: {selected.hours_to} - {selected.hours_from}</p>
+                                <a style={{fontWeight: '400'}} href={`https://www.google.com/maps/search/?api=1&query=${selected.latitude},${selected.longitude}`}>View on Google Maps</a>
                                 <div>
                                     {
                                         selected.website.map((link, index) => {
@@ -143,6 +144,7 @@ function MyComponent(props) {
                                 <p style={{fontWeight: '400', fontSize: 14}}>Address: {selected.streetaddress}</p>
                                 <p style={{fontWeight: '400', fontSize: 14}}>Seasonal Availability: {selected.seasondates}</p>
                                 <p style={{fontWeight: '400', fontSize: 14}}>Open on: {selected.daysoperation} | Hours: {selected.hoursoperations}</p>
+                                <a style={{fontWeight: '400'}} href={`https://www.google.com/maps/search/?api=1&query=${selected.latitude},${selected.longitude}`}>View on Google Maps</a>
                             </div>
                         ) : <></>
                     }
@@ -155,6 +157,7 @@ function MyComponent(props) {
                                 </div>
                                 <p style={{fontWeight: '500', fontSize: 16, color: '#323232'}}>{selected.garden_name}</p>
                                 <p style={{fontWeight: '400', fontSize: 14}}>Address: {selected.address}</p>
+                                <a style={{fontWeight: '400'}} href={`https://www.google.com/maps/search/?api=1&query=${selected.latitude},${selected.longitude}`}>View on Google Maps</a>
                             </div>
                         ) : <></>
                     }
