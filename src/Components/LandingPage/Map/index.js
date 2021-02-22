@@ -12,12 +12,11 @@ const containerStyle = {
 };
 
 const center = {
-
     lng: -73.9934,
     lat: 40.7505
 };
 
-function MyComponent() {
+function MyComponent(props) {
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_KEY
@@ -25,6 +24,8 @@ function MyComponent() {
 
     const [map, setMap] = React.useState(null)
     const [ selected, setSelected ] = React.useState(null);
+
+    const { compostChecked, gardenChecked, marketChecked } = props;
 
     const onSelect = item => {
         setSelected(item);
@@ -39,15 +40,15 @@ function MyComponent() {
     }, [])
 
     const compostIcon = {
-        url: 'https://res.cloudinary.com/lahargoue/image/upload/v1613945753/Compost_Icon_pawmpw.png',
+        url: 'https://res.cloudinary.com/lahargoue/image/upload/v1614007988/Yellow_Compost_Bucket_zrrthq.png',
         scaledSize: { width: 20, height: 20 }
     }
     const marketIcon = {
-        url: 'https://res.cloudinary.com/lahargoue/image/upload/v1613945750/Farmers_Market_Icon_lsuvxi.png',
+        url: 'https://res.cloudinary.com/lahargoue/image/upload/v1614007951/Red_Apple_snr6c5.png',
         scaledSize: { width: 20, height: 20 }
     }
     const gardenIcon = {
-        url: 'https://res.cloudinary.com/lahargoue/image/upload/v1613945741/Community_Garden_Icon_nrp6iw.png',
+        url: 'https://res.cloudinary.com/lahargoue/image/upload/v1614007947/Green_House_u7vmbt.png',
         scaledSize: { width: 20, height: 20 }
     }
 
@@ -59,42 +60,47 @@ function MyComponent() {
             onLoad={onLoad}
             onUnmount={onUnmount}
         >
-            {
-                compost_data.data.map((item) => {
-                    return (
-                        <Marker 
-                            key={item.index} 
-                            position={{lat: item.latitude, lng: item.longitude}}
-                            // name="my marker"   
-                            icon={compostIcon} 
-                            onClick={() => onSelect(item)}
-                        />
-                    )
-                })
+            { compostChecked ?
+                (
+                    compost_data.data.map((item) => {
+                        return (
+                            <Marker 
+                                key={item.index} 
+                                position={{lat: item.latitude, lng: item.longitude}}
+                                icon={compostIcon} 
+                                onClick={() => onSelect(item)}
+                            />
+                        )
+                    })
+                ) : <></>
             }
-            {
-                market_data.data.map((item) => {
-                    return (
-                        <Marker 
-                            key={item.index} 
-                            position={{lat: item.latitude, lng: item.longitude}}
-                            icon={marketIcon} 
-                            onClick={() => onSelect(item)}
-                        />
-                    )
-                })
+            { marketChecked ?
+                (
+                    market_data.data.map((item) => {
+                        return (
+                            <Marker 
+                                key={item.index} 
+                                position={{lat: item.latitude, lng: item.longitude}}
+                                icon={marketIcon} 
+                                onClick={() => onSelect(item)}
+                            />
+                        )
+                    })
+                ) : <></>
             }
-            {
-                garden_data.data.map((item) => {
-                    return (
-                        <Marker 
-                            key={item.index} 
-                            position={{lat: item.latitude, lng: item.longitude}}
-                            icon={gardenIcon} 
-                            onClick={() => onSelect(item)}
-                        />
-                    )
-                })
+            { gardenChecked ?
+                (
+                    garden_data.data.map((item) => {
+                        return (
+                            <Marker 
+                                key={item.index} 
+                                position={{lat: item.latitude, lng: item.longitude}}
+                                icon={gardenIcon} 
+                                onClick={() => onSelect(item)}
+                            />
+                        )
+                    })
+                ) : <></>
             }
             {
             selected ? (
