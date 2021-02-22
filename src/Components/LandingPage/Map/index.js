@@ -6,13 +6,13 @@ const garden_data = require('../nyc_greenthumb_community_gardens');
 
 const containerStyle = {
     width: '90vw',
-    height: '70vh',
-    margin: '50px'
+    height: '60vh',
+    alignSelf: 'center',
+    marginBottom: '50px'
 };
 
 const center = {
-    // lat: 40.809600830078125,
-    // lng: -73.918701171875
+
     lng: -73.9934,
     lat: 40.7505
 };
@@ -50,12 +50,11 @@ function MyComponent() {
         url: 'https://res.cloudinary.com/lahargoue/image/upload/v1613945741/Community_Garden_Icon_nrp6iw.png',
         scaledSize: { width: 20, height: 20 }
     }
-    console.log('map', map);
 
     return isLoaded ? (
         <GoogleMap
             mapContainerStyle={containerStyle}
-            center={{ lng: -73.9934, lat: 40.7505 }}
+            center={center}
             zoom={12}
             onLoad={onLoad}
             onUnmount={onUnmount}
