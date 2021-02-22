@@ -12,12 +12,11 @@ const containerStyle = {
 };
 
 const center = {
-
     lng: -73.9934,
     lat: 40.7505
 };
 
-function MyComponent() {
+function MyComponent(props) {
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
         googleMapsApiKey: process.env.REACT_APP_GOOGLE_KEY
@@ -25,6 +24,8 @@ function MyComponent() {
 
     const [map, setMap] = React.useState(null)
     const [ selected, setSelected ] = React.useState(null);
+
+    const { compostChecked, gardenChecked, marketChecked } = props;
 
     const onSelect = item => {
         setSelected(item);
@@ -39,15 +40,15 @@ function MyComponent() {
     }, [])
 
     const compostIcon = {
-        url: 'https://res.cloudinary.com/lahargoue/image/upload/v1613945753/Compost_Icon_pawmpw.png',
+        url: 'https://res.cloudinary.com/lahargoue/image/upload/v1614007988/Yellow_Compost_Bucket_zrrthq.png',
         scaledSize: { width: 20, height: 20 }
     }
     const marketIcon = {
-        url: 'https://res.cloudinary.com/lahargoue/image/upload/v1613945750/Farmers_Market_Icon_lsuvxi.png',
+        url: 'https://res.cloudinary.com/lahargoue/image/upload/v1614007951/Red_Apple_snr6c5.png',
         scaledSize: { width: 20, height: 20 }
     }
     const gardenIcon = {
-        url: 'https://res.cloudinary.com/lahargoue/image/upload/v1613945741/Community_Garden_Icon_nrp6iw.png',
+        url: 'https://res.cloudinary.com/lahargoue/image/upload/v1614007947/Green_House_u7vmbt.png',
         scaledSize: { width: 20, height: 20 }
     }
 
@@ -59,42 +60,47 @@ function MyComponent() {
             onLoad={onLoad}
             onUnmount={onUnmount}
         >
-            {
-                compost_data.data.map((item) => {
-                    return (
-                        <Marker 
-                            key={item.index} 
-                            position={{lat: item.latitude, lng: item.longitude}}
-                            // name="my marker"   
-                            icon={compostIcon} 
-                            onClick={() => onSelect(item)}
-                        />
-                    )
-                })
+            { compostChecked ?
+                (
+                    compost_data.data.map((item) => {
+                        return (
+                            <Marker 
+                                key={item.index} 
+                                position={{lat: item.latitude, lng: item.longitude}}
+                                icon={compostIcon} 
+                                onClick={() => onSelect(item)}
+                            />
+                        )
+                    })
+                ) : <></>
             }
-            {
-                market_data.data.map((item) => {
-                    return (
-                        <Marker 
-                            key={item.index} 
-                            position={{lat: item.latitude, lng: item.longitude}}
-                            icon={marketIcon} 
-                            onClick={() => onSelect(item)}
-                        />
-                    )
-                })
+            { marketChecked ?
+                (
+                    market_data.data.map((item) => {
+                        return (
+                            <Marker 
+                                key={item.index} 
+                                position={{lat: item.latitude, lng: item.longitude}}
+                                icon={marketIcon} 
+                                onClick={() => onSelect(item)}
+                            />
+                        )
+                    })
+                ) : <></>
             }
-            {
-                garden_data.data.map((item) => {
-                    return (
-                        <Marker 
-                            key={item.index} 
-                            position={{lat: item.latitude, lng: item.longitude}}
-                            icon={gardenIcon} 
-                            onClick={() => onSelect(item)}
-                        />
-                    )
-                })
+            { gardenChecked ?
+                (
+                    garden_data.data.map((item) => {
+                        return (
+                            <Marker 
+                                key={item.index} 
+                                position={{lat: item.latitude, lng: item.longitude}}
+                                icon={gardenIcon} 
+                                onClick={() => onSelect(item)}
+                            />
+                        )
+                    })
+                ) : <></>
             }
             {
             selected ? (
@@ -106,16 +112,20 @@ function MyComponent() {
                 <div>
                     {
                         selected.food_scrap_drop_off_site ? (
-                            <div>
-                                <p>Compost Drop-Off Site</p>
-                                <p>{selected.food_scrap_drop_off_site}</p>
-                                <p>Seasonal Availability: {selected.open_months}</p>
-                                <p>Open on: {selected.operation_day} | Hours: {selected.hours_to} - {selected.hours_from}</p>
+                            <div style={{textAlign: 'left'}}>
+                                <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                                    <p style={{fontWeight: '500', fontSize: 16, color: '#323232'}}>Compost Drop-Off Site</p>
+                                    <img style={{height: 20}} src="https://res.cloudinary.com/lahargoue/image/upload/v1614007988/Yellow_Compost_Bucket_zrrthq.png" alt=""/>
+                                </div>
+                                <p style={{fontWeight: '500', fontSize: 16, color: '#323232'}}>{selected.food_scrap_drop_off_site}</p>
+                                <p style={{fontWeight: '400', fontSize: 14}}>Seasonal Availability: {selected.open_months}</p>
+                                <p style={{fontWeight: '400', fontSize: 14}}>Open on: {selected.operation_day} | Hours: {selected.hours_to} - {selected.hours_from}</p>
+                                <a style={{fontWeight: '400'}} href={`https://www.google.com/maps/search/?api=1&query=${selected.latitude},${selected.longitude}`}>View on Google Maps</a>
                                 <div>
                                     {
                                         selected.website.map((link, index) => {
                                             return (
-                                                <a key={index} href={link}>{link}</a>
+                                                <a style={{fontWeight: '400'}} key={index} href={link}>Visit Website</a>
                                             )
                                         })
                                     }
@@ -125,37 +135,32 @@ function MyComponent() {
                     }
                     {
                         selected.marketname ? (
-                            <div>
-                                <p>Farmer's Market</p>
-                                <p>{selected.marketname}</p>
-                                <p>Address: {selected.streetaddress}</p>
-                                <p>Seasonal Availability: {selected.seasondates}</p>
-                                <p>Open on: {selected.daysoperation} | Hours: {selected.hoursoperations}</p>
+                            <div style={{textAlign: 'left'}}>
+                                <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                                    <p style={{fontWeight: '500', fontSize: 16, color: '#323232'}}>Farmer's Market</p>
+                                    <img style={{height: 20}} src="https://res.cloudinary.com/lahargoue/image/upload/v1614007951/Red_Apple_snr6c5.png" alt=""/>
+                                </div>
+                                <p style={{fontWeight: '500', fontSize: 16, color: '#323232'}}>{selected.marketname}</p>
+                                <p style={{fontWeight: '400', fontSize: 14}}>Address: {selected.streetaddress}</p>
+                                <p style={{fontWeight: '400', fontSize: 14}}>Seasonal Availability: {selected.seasondates}</p>
+                                <p style={{fontWeight: '400', fontSize: 14}}>Open on: {selected.daysoperation} | Hours: {selected.hoursoperations}</p>
+                                <a style={{fontWeight: '400'}} href={`https://www.google.com/maps/search/?api=1&query=${selected.latitude},${selected.longitude}`}>View on Google Maps</a>
                             </div>
                         ) : <></>
                     }
                     {
                         selected.garden_name ? (
-                            <div>
-                                <p>Community Garden</p>
-                                <p>{selected.garden_name}</p>
-                                <p>Address: {selected.address}</p>
-                                {/* <p>Seasonal Availability: {selected.seasondates}</p> */}
-                                {/* <p>Open on: {selected.daysoperation} | Hours: {selected.hoursoperations}</p> */}
+                            <div style={{textAlign: 'left'}}>
+                                <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                                    <p style={{fontWeight: '500', fontSize: 16, color: '#323232'}}>Community Garden</p>
+                                    <img style={{height: 20}} src="https://res.cloudinary.com/lahargoue/image/upload/v1614007947/Green_House_u7vmbt.png" alt=""/>
+                                </div>
+                                <p style={{fontWeight: '500', fontSize: 16, color: '#323232'}}>{selected.garden_name}</p>
+                                <p style={{fontWeight: '400', fontSize: 14}}>Address: {selected.address}</p>
+                                <a style={{fontWeight: '400'}} href={`https://www.google.com/maps/search/?api=1&query=${selected.latitude},${selected.longitude}`}>View on Google Maps</a>
                             </div>
                         ) : <></>
                     }
-                    
-
-
-
-                    {/* {
-                        selected.website ? 
-                        (
-                            <p>{selected.website}</p>
-                        ) : <p>No Website Available</p>
-                    } */}
-                    
                 </div>
                 </InfoWindow>
                 ) : <></>
