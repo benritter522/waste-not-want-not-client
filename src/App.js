@@ -10,14 +10,14 @@ import AboutPage from './Components/AboutPage';
 function App() {
   return (
     <div className="App">
-      <Navbar bg="dark" expand="sm">
+      <Navbar sticky="top" bg="dark" expand="sm">
         <Navbar.Brand >
           <Link style={{color: '#E2E7E7'}} to="/">Waste Not, Want Not</Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse style={{color: '#E2E7E7'}} id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Link style={{color: '#E2E7E7'}} to="/about">About</Link>
+            <Link style={{color: '#E2E7E7', paddingLeft: 1600}} to="/about">About</Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
