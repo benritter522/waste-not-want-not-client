@@ -30,8 +30,8 @@ function MyComponent() {
         setSelected(item);
     }
     const onLoad = React.useCallback(function callback(map) {
-        const bounds = new window.google.maps.LatLngBounds();
-        map.fitBounds(bounds);
+        // const bounds = new window.google.maps.LatLngBounds();
+        // map.fitBounds(bounds);
         setMap(map)
     }, [])
     const onUnmount = React.useCallback(function callback(map) {
@@ -50,11 +50,12 @@ function MyComponent() {
         url: 'https://res.cloudinary.com/lahargoue/image/upload/v1613945741/Community_Garden_Icon_nrp6iw.png',
         scaledSize: { width: 20, height: 20 }
     }
+    console.log('map', map);
 
     return isLoaded ? (
         <GoogleMap
             mapContainerStyle={containerStyle}
-            center={center}
+            center={{ lng: -73.9934, lat: 40.7505 }}
             zoom={12}
             onLoad={onLoad}
             onUnmount={onUnmount}
