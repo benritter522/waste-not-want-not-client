@@ -1,6 +1,20 @@
 div.AboutPage {
     background-color: #d5ddc6;
+    width: 100vw;
 }
+
+div.card {
+    background-color: #d5ddc6;
+    border: none;
+}
+
+div.card-title.h5 {
+    font-size: 48px;
+    margin-top: 200px;
+    margin-right: 10px;
+    color: #29401D;
+}
+
 div.faqtitle.card-title.h5 {
     font-size: 50px;
     margin-top: 50px;
@@ -29,6 +43,11 @@ div.title3.card-title.h5 {
     color: #29401D
 }
 
+div.title4.card-title.h5 {
+    font-size: 48px;
+    
+}
+
 div.faqtitle.card-title.h5 {
     margin-left: -3px;
     color: #29401D;
@@ -43,19 +62,22 @@ div.col1.card-columns {
 div.col2.card-columns {
     display: inline-block;
     font-size: 36px;
-    margin-left: 4vw;
+    margin-left: 70px;
+
 }
 
 div.col3.card-columns {
     display: inline-block;
     font-size: 36px;
-    margin-left: 4vw;
+    margin-left: 70px;
 }
 
 div.col4.card-columns {
-    display: inline-block;
-    margin-top: 200px;
-    margin-left: 4vw;
+    /* display: flex; */
+    flex-wrap: wrap;
+    margin-left: 70px;
+    flex-direction: column;
+
 }
 
 div.desccard.card {
@@ -69,6 +91,7 @@ h1{
 
 img.card-img-top {
     border-radius: 25px;
+    
 }
 
 p.desc.card-text {
@@ -78,4 +101,22 @@ p.desc.card-text {
     color: #29401D;
     background-color: #d5ddc6
     
+}
+
+p.text1.card-text {
+    margin-left: 200px;
+}
+
+p.text2.card-text {
+    margin-left: 70px;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+img.card-img.btmimg {
+    margin-top: 200px
+}
+
+p.card-text {
+    flex-direction: column-reverse;
 }
