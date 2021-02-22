@@ -98,9 +98,9 @@ const LandingPage = () => {
             <Card.Title className="title12" style={{ width: '40vw'}}>
                 What can I compost?
             </Card.Title>
-            <CardColumns>
-                <Card style={{justifyContent: "left"}}>
-                    <Card.Title>
+            <CardColumns className="col111">
+                <Card style={{justifyContent: "left", height: '80vh'}}>
+                    <Card.Title style={{width: '25vw'}}>
                         Compostable
                     </Card.Title>
                     <Card.Text>
@@ -115,8 +115,8 @@ const LandingPage = () => {
                     </ul>
                     </Card.Text>
                 </Card>
-                <Card style={{justifyContent: "left"}}>
-                    <Card.Title>
+                <Card style={{justifyContent: "left", height: '80vh'}}>
+                    <Card.Title style={{width: '25vw'}}>
                         Not Compostable
                     </Card.Title>
                     <Card.Text>
