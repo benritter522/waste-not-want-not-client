@@ -22,8 +22,6 @@ function App() {
         </Navbar.Collapse>
       </Navbar>
 
-      <h1>Waste Not, Want Not</h1>
-
       <Switch>
         <Route exact path="/" component={LandingPage} />
         <Route path="/about" component={AboutPage} />

@@ -1,5 +1,5 @@
-* {
-    background-color: #D5DDC6
+div.AboutPage {
+    background-color: #d5ddc6;
 }
 div.faqtitle.card-title.h5 {
     font-size: 50px;
@@ -43,19 +43,24 @@ div.col1.card-columns {
 div.col2.card-columns {
     display: inline-block;
     font-size: 36px;
-    margin-left: 70px;
+    margin-left: 4vw;
 }
 
 div.col3.card-columns {
     display: inline-block;
-    font-size: 29px;
-    margin-left: 70px;
+    font-size: 36px;
+    margin-left: 4vw;
 }
 
 div.col4.card-columns {
     display: inline-block;
-    margin-left: -700px;
     margin-top: 200px;
+    margin-left: 4vw;
+}
+
+div.desccard.card {
+    background-color: #d5ddc6;
+    border: none;
 }
 
 h1{
@@ -71,10 +76,6 @@ p.desc.card-text {
     margin-left: 70px;
     margin-top: 50px;
     color: #29401D;
+    background-color: #d5ddc6
     
-}
-
-p.faqtext.card-text {
-    flex-direction: column;
-
 }
