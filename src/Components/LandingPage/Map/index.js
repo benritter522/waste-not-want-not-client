@@ -2,18 +2,19 @@ import React from 'react';
 import { GoogleMap, useJsApiLoader, Marker, InfoWindow } from '@react-google-maps/api';
 const compost_data = require('../food_scrap_drop_off_locations_in_nyc');
 const market_data = require('../dohmh_farmers_markets');
+const garden_data = require('../nyc_greenthumb_community_gardens');
 
 const containerStyle = {
-    width: '500px',
-    height: '500px',
+    width: '90vw',
+    height: '70vh',
     margin: '50px'
 };
 
 const center = {
     // lat: 40.809600830078125,
     // lng: -73.918701171875
-    lng: -74.0228,
-    lat: 40.635473
+    lng: -73.9934,
+    lat: 40.7505
 };
 
 function MyComponent() {
@@ -43,6 +44,10 @@ function MyComponent() {
     }
     const marketIcon = {
         url: 'https://res.cloudinary.com/lahargoue/image/upload/v1613945750/Farmers_Market_Icon_lsuvxi.png',
+        scaledSize: { width: 20, height: 20 }
+    }
+    const gardenIcon = {
+        url: 'https://res.cloudinary.com/lahargoue/image/upload/v1613945741/Community_Garden_Icon_nrp6iw.png',
         scaledSize: { width: 20, height: 20 }
     }
 
@@ -80,6 +85,18 @@ function MyComponent() {
                 })
             }
             {
+                garden_data.data.map((item) => {
+                    return (
+                        <Marker 
+                            key={item.index} 
+                            position={{lat: item.latitude, lng: item.longitude}}
+                            icon={gardenIcon} 
+                            onClick={() => onSelect(item)}
+                        />
+                    )
+                })
+            }
+            {
             selected ? (
                 <InfoWindow
                     position={{lat: selected.latitude, lng: selected.longitude}}
@@ -98,7 +115,7 @@ function MyComponent() {
                                     {
                                         selected.website.map((link, index) => {
                                             return (
-                                                <a href={link}>{link}</a>
+                                                <a key={index} href={link}>{link}</a>
                                             )
                                         })
                                     }
@@ -117,6 +134,18 @@ function MyComponent() {
                             </div>
                         ) : <></>
                     }
+                    {
+                        selected.garden_name ? (
+                            <div>
+                                <p>Community Garden</p>
+                                <p>{selected.garden_name}</p>
+                                <p>Address: {selected.address}</p>
+                                {/* <p>Seasonal Availability: {selected.seasondates}</p> */}
+                                {/* <p>Open on: {selected.daysoperation} | Hours: {selected.hoursoperations}</p> */}
+                            </div>
+                        ) : <></>
+                    }
+                    
 
 
 

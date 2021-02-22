@@ -6,7 +6,7 @@ const LandingPage = () => {
     return (
         <div className="LandingPage">
             <div className="MapAndSearchResults" style={{display: 'flex', justifyContent: 'center'}}>
-                <SearchResultsList />
+                {/* <SearchResultsList /> */}
                 <Map />
             </div>
         </div>
