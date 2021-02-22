@@ -112,16 +112,19 @@ function MyComponent(props) {
                 <div>
                     {
                         selected.food_scrap_drop_off_site ? (
-                            <div>
-                                <p>Compost Drop-Off Site</p>
-                                <p>{selected.food_scrap_drop_off_site}</p>
-                                <p>Seasonal Availability: {selected.open_months}</p>
-                                <p>Open on: {selected.operation_day} | Hours: {selected.hours_to} - {selected.hours_from}</p>
+                            <div style={{textAlign: 'left'}}>
+                                <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                                    <p style={{fontWeight: '500', fontSize: 16, color: '#323232'}}>Compost Drop-Off Site</p>
+                                    <img style={{height: 20}} src="https://res.cloudinary.com/lahargoue/image/upload/v1614007988/Yellow_Compost_Bucket_zrrthq.png" alt=""/>
+                                </div>
+                                <p style={{fontWeight: '500', fontSize: 16, color: '#323232'}}>{selected.food_scrap_drop_off_site}</p>
+                                <p style={{fontWeight: '400', fontSize: 14}}>Seasonal Availability: {selected.open_months}</p>
+                                <p style={{fontWeight: '400', fontSize: 14}}>Open on: {selected.operation_day} | Hours: {selected.hours_to} - {selected.hours_from}</p>
                                 <div>
                                     {
                                         selected.website.map((link, index) => {
                                             return (
-                                                <a key={index} href={link}>{link}</a>
+                                                <a style={{fontWeight: '400'}} key={index} href={link}>Visit Website</a>
                                             )
                                         })
                                     }
@@ -131,37 +134,30 @@ function MyComponent(props) {
                     }
                     {
                         selected.marketname ? (
-                            <div>
-                                <p>Farmer's Market</p>
-                                <p>{selected.marketname}</p>
-                                <p>Address: {selected.streetaddress}</p>
-                                <p>Seasonal Availability: {selected.seasondates}</p>
-                                <p>Open on: {selected.daysoperation} | Hours: {selected.hoursoperations}</p>
+                            <div style={{textAlign: 'left'}}>
+                                <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                                    <p style={{fontWeight: '500', fontSize: 16, color: '#323232'}}>Farmer's Market</p>
+                                    <img style={{height: 20}} src="https://res.cloudinary.com/lahargoue/image/upload/v1614007951/Red_Apple_snr6c5.png" alt=""/>
+                                </div>
+                                <p style={{fontWeight: '500', fontSize: 16, color: '#323232'}}>{selected.marketname}</p>
+                                <p style={{fontWeight: '400', fontSize: 14}}>Address: {selected.streetaddress}</p>
+                                <p style={{fontWeight: '400', fontSize: 14}}>Seasonal Availability: {selected.seasondates}</p>
+                                <p style={{fontWeight: '400', fontSize: 14}}>Open on: {selected.daysoperation} | Hours: {selected.hoursoperations}</p>
                             </div>
                         ) : <></>
                     }
                     {
                         selected.garden_name ? (
-                            <div>
-                                <p>Community Garden</p>
-                                <p>{selected.garden_name}</p>
-                                <p>Address: {selected.address}</p>
-                                {/* <p>Seasonal Availability: {selected.seasondates}</p> */}
-                                {/* <p>Open on: {selected.daysoperation} | Hours: {selected.hoursoperations}</p> */}
+                            <div style={{textAlign: 'left'}}>
+                                <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                                    <p style={{fontWeight: '500', fontSize: 16, color: '#323232'}}>Community Garden</p>
+                                    <img style={{height: 20}} src="https://res.cloudinary.com/lahargoue/image/upload/v1614007947/Green_House_u7vmbt.png" alt=""/>
+                                </div>
+                                <p style={{fontWeight: '500', fontSize: 16, color: '#323232'}}>{selected.garden_name}</p>
+                                <p style={{fontWeight: '400', fontSize: 14}}>Address: {selected.address}</p>
                             </div>
                         ) : <></>
                     }
-                    
-
-
-
-                    {/* {
-                        selected.website ? 
-                        (
-                            <p>{selected.website}</p>
-                        ) : <p>No Website Available</p>
-                    } */}
-                    
                 </div>
                 </InfoWindow>
                 ) : <></>

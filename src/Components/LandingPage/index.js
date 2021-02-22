@@ -22,7 +22,7 @@ const LandingPage = () => {
         <div className="LandingPage" style={{backgroundColor: '#d5ddc6'}}>
             <div className="MapAndSearchResults" style={{ color: '#29401D', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                 <br/>
-                <div style={{ fontSize: 14, fontWeight: '600', display: 'flex', flexDirection: 'column' }}>
+                <div style={{ fontSize: 14, fontWeight: '600', display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
                     <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                         <Checkbox 
                             checked={compostChecked} 
@@ -31,7 +31,7 @@ const LandingPage = () => {
                             inputProps={{ 'aria-label' : 'secondary checkbox'}}
                         />
                         <p style={{marginTop: 5, marginRight: 5 }}>Compost Drop-Off Locations</p>
-                        <img style={{height: 30}} src="https://res.cloudinary.com/lahargoue/image/upload/v1614007988/Yellow_Compost_Bucket_zrrthq.png" alt=""/>
+                        <img style={{height: 20}} src="https://res.cloudinary.com/lahargoue/image/upload/v1614007988/Yellow_Compost_Bucket_zrrthq.png" alt=""/>
                     </div>
                     <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                         <Checkbox 
@@ -41,7 +41,7 @@ const LandingPage = () => {
                             inputProps={{ 'aria-label' : 'secondary checkbox'}}
                         />
                         <p style={{marginTop: 5, marginRight: 5 }}>Community Gardens</p>
-                        <img style={{height: 30}} src="https://res.cloudinary.com/lahargoue/image/upload/v1614007947/Green_House_u7vmbt.png" alt=""/>
+                        <img style={{height: 20}} src="https://res.cloudinary.com/lahargoue/image/upload/v1614007947/Green_House_u7vmbt.png" alt=""/>
                     </div>
                     <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                         <Checkbox 
@@ -50,11 +50,12 @@ const LandingPage = () => {
                             color="default"
                             inputProps={{ 'aria-label' : 'secondary checkbox'}}
                         />
-                        <p style={{marginTop: 5, marginRight: 5 }}>Farmer's Markets</p>
-                        <img style={{height: 30}} src="https://res.cloudinary.com/lahargoue/image/upload/v1614007951/Red_Apple_snr6c5.png" alt=""/>
+                        <p style={{marginTop: 5, marginRight: 5 }}>Farmers Markets</p>
+                        <img style={{height: 20}} src="https://res.cloudinary.com/lahargoue/image/upload/v1614007951/Red_Apple_snr6c5.png" alt=""/>
                     </div>
                 </div>
-                <p style={{ fontSize: 30, marginLeft: 50, marginRight: 50 }}>Zoom into the map to quickly find your nearest Compost Drop-off location, Community Garden, and Farmer’s Market to you. Click the icons to see more details.</p>
+                <p style={{ fontSize: 20, marginLeft: 50, marginRight: 50 }}>Zoom into the map to find sustainable locations near you.</p> 
+                <p style={{ fontSize: 16, marginLeft: 50, marginRight: 50 }}>Click the icons on the map to see more details.</p>
                 <Map compostChecked={compostChecked} gardenChecked={gardenChecked} marketChecked={marketChecked}/>
             </div>
         </div>
