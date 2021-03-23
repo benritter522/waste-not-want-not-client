@@ -40,15 +40,15 @@ function MyComponent(props) {
     }, [])
 
     const compostIcon = {
-        url: 'https://res.cloudinary.com/lahargoue/image/upload/v1614007988/Yellow_Compost_Bucket_zrrthq.png',
+        url: 'https://res.cloudinary.com/lahargouedesign/image/upload/v1614007988/Yellow_Compost_Bucket_zrrthq.png',
         scaledSize: { width: 20, height: 20 }
     }
     const marketIcon = {
-        url: 'https://res.cloudinary.com/lahargoue/image/upload/v1614007951/Red_Apple_snr6c5.png',
+        url: 'https://res.cloudinary.com/lahargouedesign/image/upload/v1614007951/Red_Apple_snr6c5.png',
         scaledSize: { width: 20, height: 20 }
     }
     const gardenIcon = {
-        url: 'https://res.cloudinary.com/lahargoue/image/upload/v1614007947/Green_House_u7vmbt.png',
+        url: 'https://res.cloudinary.com/lahargouedesign/image/upload/v1614007947/Green_House_u7vmbt.png',
         scaledSize: { width: 20, height: 20 }
     }
 
@@ -115,7 +115,7 @@ function MyComponent(props) {
                             <div style={{textAlign: 'left'}}>
                                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
                                     <p style={{fontWeight: '500', fontSize: 16, color: '#323232'}}>Compost Drop-Off Site</p>
-                                    <img style={{height: 20}} src="https://res.cloudinary.com/lahargoue/image/upload/v1614007988/Yellow_Compost_Bucket_zrrthq.png" alt=""/>
+                                    <img style={{height: 20}} src="https://res.cloudinary.com/lahargouedesign/image/upload/v1614007988/Yellow_Compost_Bucket_zrrthq.png" alt=""/>
                                 </div>
                                 <p style={{fontWeight: '500', fontSize: 16, color: '#323232'}}>{selected.food_scrap_drop_off_site}</p>
                                 <p style={{fontWeight: '400', fontSize: 14}}>Seasonal Availability: {selected.open_months}</p>
@@ -138,7 +138,7 @@ function MyComponent(props) {
                             <div style={{textAlign: 'left'}}>
                                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
                                     <p style={{fontWeight: '500', fontSize: 16, color: '#323232'}}>Farmer's Market</p>
-                                    <img style={{height: 20}} src="https://res.cloudinary.com/lahargoue/image/upload/v1614007951/Red_Apple_snr6c5.png" alt=""/>
+                                    <img style={{height: 20}} src="https://res.cloudinary.com/lahargouedesign/image/upload/v1614007951/Red_Apple_snr6c5.png" alt=""/>
                                 </div>
                                 <p style={{fontWeight: '500', fontSize: 16, color: '#323232'}}>{selected.marketname}</p>
                                 <p style={{fontWeight: '400', fontSize: 14}}>Address: {selected.streetaddress}</p>
@@ -153,7 +153,7 @@ function MyComponent(props) {
                             <div style={{textAlign: 'left'}}>
                                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
                                     <p style={{fontWeight: '500', fontSize: 16, color: '#323232'}}>Community Garden</p>
-                                    <img style={{height: 20}} src="https://res.cloudinary.com/lahargoue/image/upload/v1614007947/Green_House_u7vmbt.png" alt=""/>
+                                    <img style={{height: 20}} src="https://res.cloudinary.com/lahargouedesign/image/upload/v1614007947/Green_House_u7vmbt.png" alt=""/>
                                 </div>
                                 <p style={{fontWeight: '500', fontSize: 16, color: '#323232'}}>{selected.garden_name}</p>
                                 <p style={{fontWeight: '400', fontSize: 14}}>Address: {selected.address}</p>

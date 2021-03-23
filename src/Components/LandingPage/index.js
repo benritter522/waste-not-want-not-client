@@ -34,7 +34,7 @@ const LandingPage = () => {
                             inputProps={{ 'aria-label' : 'secondary checkbox'}}
                         />
                         <p style={{marginTop: 5, marginRight: 5 }}>Compost Drop-Off Locations</p>
-                        <img style={{height: 20}} src="https://res.cloudinary.com/lahargoue/image/upload/v1614007988/Yellow_Compost_Bucket_zrrthq.png" alt=""/>
+                        <img style={{height: 20}} src="https://res.cloudinary.com/lahargouedesign/image/upload/v1614007988/Yellow_Compost_Bucket_zrrthq.png" alt=""/>
                     </div>
                     <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                         <Checkbox 
@@ -44,7 +44,7 @@ const LandingPage = () => {
                             inputProps={{ 'aria-label' : 'secondary checkbox'}}
                         />
                         <p style={{marginTop: 5, marginRight: 5 }}>Community Gardens</p>
-                        <img style={{height: 20}} src="https://res.cloudinary.com/lahargoue/image/upload/v1614007947/Green_House_u7vmbt.png" alt=""/>
+                        <img style={{height: 20}} src="https://res.cloudinary.com/lahargouedesign/image/upload/v1614007947/Green_House_u7vmbt.png" alt=""/>
                     </div>
                     <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                         <Checkbox 
@@ -54,7 +54,7 @@ const LandingPage = () => {
                             inputProps={{ 'aria-label' : 'secondary checkbox'}}
                         />
                         <p style={{marginTop: 5, marginRight: 5 }}>Farmers Markets</p>
-                        <img style={{height: 20}} src="https://res.cloudinary.com/lahargoue/image/upload/v1614007951/Red_Apple_snr6c5.png" alt=""/>
+                        <img style={{height: 20}} src="https://res.cloudinary.com/lahargouedesign/image/upload/v1614007951/Red_Apple_snr6c5.png" alt=""/>
                     </div>
                 </div>
                 <p style={{ fontSize: 20, marginLeft: 50, marginRight: 50 }}>Zoom into the map to find sustainable locations near you.</p> 
